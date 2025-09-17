@@ -255,3 +255,97 @@ main {
         font-size: 1.2rem;
     }
 }
+
+/* Adicione estas regras no final do arquivo */
+
+/* Melhorias de responsividade para mobile */
+@media (max-width: 480px) {
+    header {
+        padding: 12px 0;
+        font-size: 18px;
+    }
+    
+    main {
+        padding: 20px 10px;
+    }
+    
+    .baloon {
+        font-size: 1rem;
+        width: 90%;
+        padding: 12px;
+        margin: 15px auto;
+    }
+    
+    .baloonq {
+        width: 70%;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    
+    .buttons-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .buttons-row .button-container button,
+    .buttons-row .button-container2 button,
+    .buttons-row .button-container3 button {
+        width: 280px;
+        height: 80px;
+        font-size: 1.2rem;
+    }
+    
+    img {
+        max-width: 95%;
+        height: auto;
+    }
+}
+
+/* Melhorias para tablets */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .buttons-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .buttons-row .button-container button {
+        width: 300px;
+        height: 120px;
+    }
+}
+
+/* Melhorias de acessibilidade para toque */
+@media (hover: none) {
+    .buttons-row .button-container button:hover,
+    .buttons-row .button-container2 button:hover,
+    .buttons-row .button-container3 button:hover {
+        transform: none;
+        background-color: #ffffff;
+    }
+    
+    .buttons-row .button-container3 button:hover {
+        background-color: #00af35;
+    }
+}
+
+/* Garantir que imagens sejam responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Melhorar legibilidade em dispositivos móveis */
+body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Ajustes específicos para a página inicial */
+@media (max-width: 480px) {
+    img[src="imgs/intro/logo.png"] {
+        width: 200px;
+        height: 200px;
+    }
+}
