@@ -187,6 +187,80 @@
                 font-size: 1.6rem;
             }
         }
+        /* remove overflow horizontal indesejado em mobile/desktop */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* garante que o título quebre e não force largura além da viewport */
+header h1 {
+  margin: 0;
+  padding: 12px 6vw;           /* mantém o header com um padding responsivo */
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.05;
+}
+
+/* centraliza o logo de forma confiável */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 0 6vw;
+  width: 100%;
+}
+.logo-container img {
+  display: block;
+  margin: 0 auto;
+  max-width: min(70%, 320px); /* controla tamanho sem extrapolar */
+  height: auto;
+}
+
+/* container do botão: ocupa largura total, com padding responsivo */
+.button-container3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 6vw;        /* garante folga igual dos dois lados */
+  margin: 18px auto;
+  max-width: 900px;
+  box-sizing: border-box;
+}
+
+/* botão agora preenche o container até um máximo — evita sobras laterais estranhas */
+.button-container3 button {
+  width: 100%;
+  max-width: clamp(260px, 42vw, 480px); /* em telas grandes fica maior, em pequenas encolhe */
+  height: clamp(64px, 8.5vw, 110px);
+  padding: 0 18px;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* footer: garante largura total e padding responsivo */
+footer {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 6vw;
+}
+
+/* se for necessário evitar que o fundo fixo cause scroll estranho, troque fixed por absolute */
+/* main::before {
+   position: absolute;  <-- descomente essa linha e comente a "position: fixed" original se notar barras de rolagem indesejadas
+} */
+
+/* pequenos ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+  .button-container3 { padding: 0 4vw; }
+  header h1 { padding: 10px 4vw; font-size: clamp(14px, 7vw, 20px); }
+}
+
     </style>
 </head>
 <body>
